@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RentShare BD</string>
+    <string name="tagline">Find your place. Feel at home.</string>
+    <string name="hero_badge">Built for Students &amp; Young Professionals in Bangladesh</string>
+    <string name="hero_subtitle">Find a home that feels like yours. Explore sample spaces, build flatmate connections, and manage shared living with care.</string>
+    <string name="ai_financial_title">AI Financial Coach</string>
+    <string name="ai_rental_title">AI Rental Assistant</string>
+    <string name="nav_home">Explore</string>
+    <string name="nav_properties">Flats</string>
+    <string name="nav_roommates">Roommates</string>
+    <string name="nav_workspace">Workspace</string>
+    <string name="nav_account">Account</string>
+    <string name="error_invalid_email">Please enter a valid email address.</string>
+    <string name="error_empty_fields">Please fill in all required fields.</string>
+</resources>

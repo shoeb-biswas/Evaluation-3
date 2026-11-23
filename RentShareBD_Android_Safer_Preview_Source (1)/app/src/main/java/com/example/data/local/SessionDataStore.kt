@@ -1,0 +1,27 @@
+package com.example.data.local
+
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.longPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+private val Context.sessionDataStore: DataStore<Preferences> by preferencesDataStore(name = "rentshare_session")
+
+class SessionDataStore(private val context: Context) {
+    private val userIdKey = longPreferencesKey("logged_in_user_id")
+
+    val loggedInUserId: Flow<Long?> = context.sessionDataStore.data.map { prefs ->
+        prefs[userIdKey]
+    }
+
+    suspend fun setLoggedInUserId(userId: Long?) {
+        context.sessionDataStore.edit { prefs ->
+            if (userId == null) prefs.remove(userIdKey)
+            else prefs[userIdKey] = userId
+        }
+    }
+}
